@@ -8,13 +8,14 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.0902, lng: -95.7129},  // 这是美国的大致地理中心
-          zoom: 4  // 缩放级别：更高的值表示更详细的缩放
+          center: {lat: 37.0902, lng: -95.7129},
+          zoom: 4
         });
       }
     </script>
   </head>
   <body onload="initMap()">
     <div id="map" style="height: 500px; width: 100%;"></div>
+    <input type="text" [(ngModel)]="selectedState" [typeahead]="states" class="form-control">
   </body>
 </html>
