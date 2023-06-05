@@ -2,6 +2,7 @@ const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
   type State {
+    abbr: String!
     name: String!
   }
 
