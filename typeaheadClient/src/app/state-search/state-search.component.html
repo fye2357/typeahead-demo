@@ -1,5 +1,8 @@
-<input (input)="searchTerms.next($event.target.value)">
-<ul>
-    <li *ngFor="let state of states">{{ state.name }}</li>
-</ul>
-
+<div class="search-bar">
+    <input [(ngModel)]="term" (ngModelChange)="searchTerms.next(term)" placeholder="Search for a state...">
+    <div class="search-results" *ngIf="states.length > 0">
+      <div *ngFor="let state of states" (click)="selectState(state)">
+        {{ state }}
+      </div>
+    </div>
+  </div>

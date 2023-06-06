@@ -9,11 +9,14 @@ export class StateSearchService {
 
   constructor(private apollo: Apollo) { }
 
-  searchStates(args: String) {
+  searchStates(args: string) {
     return this.apollo.watchQuery({
       query: gql`
         query SearchStates($args: String!) {
-          searchStates(args: $args)
+          searchStates(args: $args) {
+            name
+            abbr
+          }
         }
       `,
       variables: {
