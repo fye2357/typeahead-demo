@@ -11,10 +11,10 @@ import { debounceTime, switchMap } from 'rxjs/operators';
 export class StateSearchComponent {
   term: string = "";
   searchTerms = new Subject<string>();
-  states: string[] = [];
+  states : any = [];
 
   selectState(state: any){
-    
+
   }
 
   constructor(private stateSearchService: StateSearchService) {

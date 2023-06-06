@@ -2,7 +2,7 @@
     <input [(ngModel)]="term" (ngModelChange)="searchTerms.next(term)" placeholder="Search for a state...">
     <div class="search-results" *ngIf="states.length > 0">
       <div *ngFor="let state of states" (click)="selectState(state)">
-        {{ state }}
+        {{ state.name }}
       </div>
     </div>
   </div>
